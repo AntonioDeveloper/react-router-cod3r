@@ -1,11 +1,20 @@
-import { IconMenu, IconX } from "@tabler/icons-react";
+import { IconActivity, IconDirectionSign, IconFileAlert, IconLayoutNavbarCollapse, IconLocation, IconMenu, IconRefreshAlert, IconRoute, IconSearch, IconX } from "@tabler/icons-react";
 import { MenuItem } from "../../data/models/MenuItem";
 import Logo from "./Logo";
 import MenuPrincipalItem from "./MenuPrincipalItem";
 import Flex from "./Flex";
 import { useState } from "react";
 
-const itens: MenuItem[] = [];
+const itens: MenuItem[] = [
+    { titulo: "Tipos de Links", url: "/tiposDeLinks", icone: <IconLayoutNavbarCollapse /> },
+    { titulo: "Navegação Com NavLink", url: "/navegacaoComNavLink", icone: <IconDirectionSign /> },
+    { titulo: "Pagina 404", url: "/pagina404", icone: <IconFileAlert /> },
+    { titulo: "Parametros de Rota", url: "/parametrosDeRota", icone: <IconRoute /> },
+    { titulo: "Parametros de Busca", url: "/parametrosDeBusca", icone: <IconSearch /> },
+    { titulo: "Entendendo useLocation", url: "/entendendoUseLocation", icone: <IconLocation /> },
+    { titulo: "Entendendo Actions", url: "/entendendoActions", icone: <IconActivity /> },
+    { titulo: "Entendendo Loaders", url: "/entendendoLoaders", icone: <IconRefreshAlert /> },
+];
 
 export default function MenuPrincipal() {
     const [mini, setMini] = useState(false);

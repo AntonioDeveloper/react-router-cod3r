@@ -2,47 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Inicio from './pages/shared/inicio';
-import Sobre from './pages/shared/sobre';
-import Contato from './pages/shared/contato';
-import Layout from './components/template/Layout';
+import router from "./routes"
+import { RouterProvider } from 'react-router-dom';
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout />,
-//     children: [
-//       {
-//         index: true,
-//         // path: '',
-//         element: <Inicio />
-//       },
-//       {
-//         path: '/info',
-//         children: [
-//           {
-//             path: 'sobre', element: <Sobre />
-//           },
-//           {
-//             path: 'contato',
-//             element: <Contato />,
-//           }
-//         ]
-//       }
-//     ]
-//   },
-// ]);
-
-const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route index element={<Inicio />} />
-    <Route path="info">
-      <Route path="sobre" element={<Sobre />} />
-      <Route path="contato" element={<Contato />} />
-    </Route>
-  </Route >
-));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
