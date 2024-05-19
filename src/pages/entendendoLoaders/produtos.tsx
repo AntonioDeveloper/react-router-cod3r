@@ -36,7 +36,7 @@ export default function Produtos() {
 }
 
 export async function pegaProdutos() {
-  const dados = await fetch("https://fakestoreapi.com/products?limit=10");
-  const dadosJSON = await dados.json();
-  return dadosJSON;
+  return await fetch("https://fakestoreapi.com/products?limit=10");
+  // const dadosJSON = await dados.json();
+  // return dadosJSON;
 }

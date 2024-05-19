@@ -4,9 +4,7 @@ import ProdutosLoaders from "../../data/models/ProdutosEntendendoLoaders";
 
 export default function VisualizarProduto() {
 
-  const produto = useLoaderData() as ProdutosLoaders;
-
-  const { title, description, price } = produto;
+  const { title, description, price } = useLoaderData() as ProdutosLoaders;
 
   return (
     <Pagina titulo={title}>
@@ -23,11 +21,13 @@ export default function VisualizarProduto() {
 
 export async function pegaProduto(props) {
 
-  const dados = await fetch(`https://fakestoreapi.com/products/${props.params.id}`);
-  const dadosJSON = await dados.json();
+  return await fetch(`https://fakestoreapi.com/products/${props.params.id}`);
 
-  const { description, price, title } = dadosJSON;
+  // const dados = await fetch(`https://fakestoreapi.com/products/${props.params.id}`);
+  // const dadosJSON = await dados.json();
 
-  return { description, price, title };
+  // const { description, price, title } = dadosJSON;
+
+  // return { description, price, title };
 
 }
